@@ -102,5 +102,38 @@
 
   body {
     @apply bg-background text-foreground;
+    font-size: 16px; /* Base font size for accessibility */
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --primary: 221 83% 45%;
+      --foreground: 0 0% 0%;
+      --background: 0 0% 100%;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-accessible {
+    @apply text-lg leading-relaxed;
+  }
+
+  .text-elderly {
+    @apply text-xl leading-loose;
+  }
+
+  .btn-large {
+    @apply px-6 py-4 text-lg font-medium min-h-[48px];
   }
 }
