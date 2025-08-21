@@ -27,6 +27,31 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        medical: {
+          50: "hsl(215, 100%, 97%)",
+          100: "hsl(214, 95%, 93%)",
+          200: "hsl(213, 97%, 87%)",
+          300: "hsl(212, 96%, 78%)",
+          400: "hsl(213, 94%, 68%)",
+          500: "hsl(217, 91%, 60%)",
+          600: "hsl(221, 83%, 53%)",
+          700: "hsl(224, 76%, 48%)",
+          800: "hsl(226, 71%, 40%)",
+          900: "hsl(224, 64%, 33%)",
+          950: "hsl(226, 55%, 21%)",
+        },
+        success: {
+          DEFAULT: "hsl(142, 76%, 36%)",
+          foreground: "hsl(355, 7%, 97%)",
+        },
+        warning: {
+          DEFAULT: "hsl(38, 92%, 50%)",
+          foreground: "hsl(48, 96%, 89%)",
+        },
+        error: {
+          DEFAULT: "hsl(0, 84%, 60%)",
+          foreground: "hsl(0, 0%, 98%)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
