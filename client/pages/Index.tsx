@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  Scan, 
-  Upload, 
-  Users, 
-  Heart, 
+import {
+  Shield,
+  Scan,
+  Upload,
+  Users,
+  Heart,
   CheckCircle,
   ArrowRight,
   Stethoscope,
   PillIcon,
-  UserCheck
+  UserCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -29,19 +35,30 @@ export default function Index() {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Shield className="h-8 w-8 text-medical-600" />
-                <span className="ml-2 text-xl font-bold text-medical-900">MediSafe</span>
+                <span className="ml-2 text-xl font-bold text-medical-900">
+                  MediSafe
+                </span>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a href="#features" className="text-medical-700 hover:text-medical-900 font-medium transition-colors">
+              <a
+                href="#features"
+                className="text-medical-700 hover:text-medical-900 font-medium transition-colors"
+              >
                 Features
               </a>
-              <a href="#about" className="text-medical-700 hover:text-medical-900 font-medium transition-colors">
+              <a
+                href="#about"
+                className="text-medical-700 hover:text-medical-900 font-medium transition-colors"
+              >
                 About
               </a>
-              <a href="#contact" className="text-medical-700 hover:text-medical-900 font-medium transition-colors">
+              <a
+                href="#contact"
+                className="text-medical-700 hover:text-medical-900 font-medium transition-colors"
+              >
                 Contact
               </a>
             </nav>
@@ -49,7 +66,10 @@ export default function Index() {
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               <Link to="/auth">
-                <Button variant="ghost" className="text-medical-700 hover:text-medical-900">
+                <Button
+                  variant="ghost"
+                  className="text-medical-700 hover:text-medical-900"
+                >
                   Sign In
                 </Button>
               </Link>
@@ -66,8 +86,18 @@ export default function Index() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-medical-700 hover:text-medical-900 focus:outline-none focus:ring-2 focus:ring-medical-500"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               </button>
             </div>
@@ -77,13 +107,22 @@ export default function Index() {
           {mobileMenuOpen && (
             <div className="md:hidden py-4 border-t border-medical-200">
               <div className="flex flex-col space-y-4">
-                <a href="#features" className="text-medical-700 hover:text-medical-900 font-medium">
+                <a
+                  href="#features"
+                  className="text-medical-700 hover:text-medical-900 font-medium"
+                >
                   Features
                 </a>
-                <a href="#about" className="text-medical-700 hover:text-medical-900 font-medium">
+                <a
+                  href="#about"
+                  className="text-medical-700 hover:text-medical-900 font-medium"
+                >
                   About
                 </a>
-                <a href="#contact" className="text-medical-700 hover:text-medical-900 font-medium">
+                <a
+                  href="#contact"
+                  className="text-medical-700 hover:text-medical-900 font-medium"
+                >
                   Contact
                 </a>
                 <div className="flex flex-col space-y-2 pt-4 border-t border-medical-200">
@@ -110,15 +149,16 @@ export default function Index() {
           <Badge className="mb-6 bg-medical-100 text-medical-800 hover:bg-medical-200">
             Trusted by 10,000+ healthcare professionals
           </Badge>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold text-medical-900 mb-6 leading-tight">
             Smart Medicine Safety
             <span className="block text-medical-600">Made Simple</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-medical-700 mb-8 max-w-3xl mx-auto text-accessible leading-relaxed">
-            Scan medicines or upload prescriptions to check safety, side effects, and interactions. 
-            Protecting patients, supporting healthcare professionals.
+            Scan medicines or upload prescriptions to check safety, side
+            effects, and interactions. Protecting patients, supporting
+            healthcare professionals.
           </p>
 
           {/* Main Action Buttons */}
@@ -130,9 +170,12 @@ export default function Index() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            
+
             <Link to="/upload" className="w-full sm:w-auto">
-              <Button variant="outline" className="w-full sm:w-auto border-medical-300 text-medical-700 hover:bg-medical-50 btn-large">
+              <Button
+                variant="outline"
+                className="w-full sm:w-auto border-medical-300 text-medical-700 hover:bg-medical-50 btn-large"
+              >
                 <Upload className="mr-2 h-5 w-5" />
                 Upload Prescription
               </Button>
@@ -158,7 +201,10 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section
+        id="features"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+      >
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-900 mb-4">
             Comprehensive Medicine Safety Platform
@@ -175,12 +221,15 @@ export default function Index() {
               <div className="mx-auto mb-4 p-3 bg-medical-100 rounded-full w-fit">
                 <Scan className="h-8 w-8 text-medical-600" />
               </div>
-              <CardTitle className="text-xl text-medical-900">Quick Barcode Scanning</CardTitle>
+              <CardTitle className="text-xl text-medical-900">
+                Quick Barcode Scanning
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-medical-700 text-accessible">
-                Simply scan medicine barcodes with your phone camera to instantly get comprehensive safety information, 
-                side effects, and dosage guidelines.
+                Simply scan medicine barcodes with your phone camera to
+                instantly get comprehensive safety information, side effects,
+                and dosage guidelines.
               </CardDescription>
             </CardContent>
           </Card>
@@ -191,12 +240,14 @@ export default function Index() {
               <div className="mx-auto mb-4 p-3 bg-medical-100 rounded-full w-fit">
                 <Upload className="h-8 w-8 text-medical-600" />
               </div>
-              <CardTitle className="text-xl text-medical-900">Prescription Analysis</CardTitle>
+              <CardTitle className="text-xl text-medical-900">
+                Prescription Analysis
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-medical-700 text-accessible">
-                Upload prescription images for automatic text extraction and analysis. 
-                Get detailed interaction reports and safety warnings.
+                Upload prescription images for automatic text extraction and
+                analysis. Get detailed interaction reports and safety warnings.
               </CardDescription>
             </CardContent>
           </Card>
@@ -207,11 +258,13 @@ export default function Index() {
               <div className="mx-auto mb-4 p-3 bg-medical-100 rounded-full w-fit">
                 <Heart className="h-8 w-8 text-medical-600" />
               </div>
-              <CardTitle className="text-xl text-medical-900">AI Health Assistant</CardTitle>
+              <CardTitle className="text-xl text-medical-900">
+                AI Health Assistant
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-medical-700 text-accessible">
-                Ask questions about medications, dosages, and safety concerns. 
+                Ask questions about medications, dosages, and safety concerns.
                 Get instant, reliable answers from our AI-powered assistant.
               </CardDescription>
             </CardContent>
@@ -236,7 +289,9 @@ export default function Index() {
             <Card className="border-medical-200 bg-white">
               <CardHeader className="text-center">
                 <UserCheck className="h-12 w-12 text-medical-600 mx-auto mb-4" />
-                <CardTitle className="text-xl text-medical-900">For Patients</CardTitle>
+                <CardTitle className="text-xl text-medical-900">
+                  For Patients
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-medical-700 text-accessible">
@@ -260,7 +315,9 @@ export default function Index() {
             <Card className="border-medical-200 bg-white">
               <CardHeader className="text-center">
                 <PillIcon className="h-12 w-12 text-medical-600 mx-auto mb-4" />
-                <CardTitle className="text-xl text-medical-900">For Chemists</CardTitle>
+                <CardTitle className="text-xl text-medical-900">
+                  For Chemists
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-medical-700 text-accessible">
@@ -284,7 +341,9 @@ export default function Index() {
             <Card className="border-medical-200 bg-white">
               <CardHeader className="text-center">
                 <Stethoscope className="h-12 w-12 text-medical-600 mx-auto mb-4" />
-                <CardTitle className="text-xl text-medical-900">For Doctors</CardTitle>
+                <CardTitle className="text-xl text-medical-900">
+                  For Doctors
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-medical-700 text-accessible">
@@ -316,7 +375,7 @@ export default function Index() {
           <p className="text-xl text-medical-700 mb-8 text-accessible">
             Join thousands of healthcare professionals using MediSafe every day
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/auth">
               <Button className="bg-medical-600 hover:bg-medical-700 text-white btn-large">
@@ -325,7 +384,10 @@ export default function Index() {
               </Button>
             </Link>
             <Link to="/scanner">
-              <Button variant="outline" className="border-medical-300 text-medical-700 hover:bg-medical-50 btn-large">
+              <Button
+                variant="outline"
+                className="border-medical-300 text-medical-700 hover:bg-medical-50 btn-large"
+              >
                 Try Scanner Now
               </Button>
             </Link>
@@ -345,7 +407,8 @@ export default function Index() {
               Making medicine safety accessible to everyone
             </p>
             <p className="text-medical-400 mt-4 text-sm">
-              © 2024 MediSafe. All rights reserved. | Privacy Policy | Terms of Service
+              © 2024 MediSafe. All rights reserved. | Privacy Policy | Terms of
+              Service
             </p>
           </div>
         </div>

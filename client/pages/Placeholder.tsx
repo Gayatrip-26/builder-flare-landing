@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  ArrowLeft, 
-  Construction,
-  MessageCircle
-} from "lucide-react";
+import { Shield, ArrowLeft, Construction, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface PlaceholderProps {
@@ -16,7 +17,12 @@ interface PlaceholderProps {
   comingSoon?: boolean;
 }
 
-export default function Placeholder({ title, description, icon, comingSoon = true }: PlaceholderProps) {
+export default function Placeholder({
+  title,
+  description,
+  icon,
+  comingSoon = true,
+}: PlaceholderProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-medical-50 to-white">
       {/* Header */}
@@ -26,9 +32,11 @@ export default function Placeholder({ title, description, icon, comingSoon = tru
             <Link to="/" className="flex items-center">
               <ArrowLeft className="h-5 w-5 text-medical-600 mr-2" />
               <Shield className="h-8 w-8 text-medical-600" />
-              <span className="ml-2 text-xl font-bold text-medical-900">MediSafe</span>
+              <span className="ml-2 text-xl font-bold text-medical-900">
+                MediSafe
+              </span>
             </Link>
-            
+
             {comingSoon && (
               <Badge className="bg-warning text-warning-foreground">
                 Coming Soon
@@ -61,15 +69,18 @@ export default function Placeholder({ title, description, icon, comingSoon = tru
                   <span className="font-medium">Under Development</span>
                 </div>
               )}
-              
+
               <div className="space-y-3">
                 <Link to="/">
-                  <Button variant="outline" className="w-full border-medical-300 text-medical-700 hover:bg-medical-50 btn-large">
+                  <Button
+                    variant="outline"
+                    className="w-full border-medical-300 text-medical-700 hover:bg-medical-50 btn-large"
+                  >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Home
                   </Button>
                 </Link>
-                
+
                 <Button className="w-full bg-medical-600 hover:bg-medical-700 text-white btn-large">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Request This Feature
@@ -77,7 +88,8 @@ export default function Placeholder({ title, description, icon, comingSoon = tru
               </div>
 
               <p className="text-sm text-medical-600">
-                Want this feature prioritized? Let us know and we'll work on it next!
+                Want this feature prioritized? Let us know and we'll work on it
+                next!
               </p>
             </CardContent>
           </Card>

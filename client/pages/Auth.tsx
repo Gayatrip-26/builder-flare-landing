@@ -1,22 +1,28 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  Eye, 
-  EyeOff, 
-  Mail, 
-  Lock, 
+import {
+  Shield,
+  Eye,
+  EyeOff,
+  Mail,
+  Lock,
   ArrowLeft,
   CheckCircle,
   User,
   Stethoscope,
   PillIcon,
-  UserCheck
+  UserCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -25,13 +31,13 @@ export default function Auth() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loginForm, setLoginForm] = useState({
     email: "",
-    password: ""
+    password: "",
   });
   const [signupForm, setSignupForm] = useState({
     email: "",
     password: "",
     confirmPassword: "",
-    role: "patient"
+    role: "patient",
   });
 
   const handleLogin = (e: React.FormEvent) => {
@@ -55,9 +61,11 @@ export default function Auth() {
             <Link to="/" className="flex items-center">
               <ArrowLeft className="h-5 w-5 text-medical-600 mr-2" />
               <Shield className="h-8 w-8 text-medical-600" />
-              <span className="ml-2 text-xl font-bold text-medical-900">MediSafe</span>
+              <span className="ml-2 text-xl font-bold text-medical-900">
+                MediSafe
+              </span>
             </Link>
-            
+
             <Badge className="bg-medical-100 text-medical-800">
               Secure Authentication
             </Badge>
@@ -87,20 +95,29 @@ export default function Auth() {
             <CardContent>
               <Tabs defaultValue="login" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 mb-6">
-                  <TabsTrigger value="login" className="text-accessible">Sign In</TabsTrigger>
-                  <TabsTrigger value="signup" className="text-accessible">Sign Up</TabsTrigger>
+                  <TabsTrigger value="login" className="text-accessible">
+                    Sign In
+                  </TabsTrigger>
+                  <TabsTrigger value="signup" className="text-accessible">
+                    Sign Up
+                  </TabsTrigger>
                 </TabsList>
 
                 {/* Login Tab */}
                 <TabsContent value="login">
-                  <CardTitle className="text-xl text-medical-900 mb-2">Sign In</CardTitle>
+                  <CardTitle className="text-xl text-medical-900 mb-2">
+                    Sign In
+                  </CardTitle>
                   <CardDescription className="text-medical-700 mb-6 text-accessible">
                     Access your MediSafe account securely
                   </CardDescription>
 
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="login-email" className="text-medical-900 font-medium">
+                      <Label
+                        htmlFor="login-email"
+                        className="text-medical-900 font-medium"
+                      >
                         Email Address
                       </Label>
                       <div className="relative">
@@ -110,7 +127,12 @@ export default function Auth() {
                           type="email"
                           placeholder="your.email@example.com"
                           value={loginForm.email}
-                          onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
+                          onChange={(e) =>
+                            setLoginForm({
+                              ...loginForm,
+                              email: e.target.value,
+                            })
+                          }
                           className="pl-10 border-medical-300 focus:border-medical-500 focus:ring-medical-500 text-accessible"
                           required
                         />
@@ -118,7 +140,10 @@ export default function Auth() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="login-password" className="text-medical-900 font-medium">
+                      <Label
+                        htmlFor="login-password"
+                        className="text-medical-900 font-medium"
+                      >
                         Password
                       </Label>
                       <div className="relative">
@@ -128,7 +153,12 @@ export default function Auth() {
                           type={showPassword ? "text" : "password"}
                           placeholder="Enter your password"
                           value={loginForm.password}
-                          onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
+                          onChange={(e) =>
+                            setLoginForm({
+                              ...loginForm,
+                              password: e.target.value,
+                            })
+                          }
                           className="pl-10 pr-10 border-medical-300 focus:border-medical-500 focus:ring-medical-500 text-accessible"
                           required
                         />
@@ -137,19 +167,26 @@ export default function Auth() {
                           onClick={() => setShowPassword(!showPassword)}
                           className="absolute right-3 top-3 text-medical-400 hover:text-medical-600"
                         >
-                          {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                          {showPassword ? (
+                            <EyeOff className="h-5 w-5" />
+                          ) : (
+                            <Eye className="h-5 w-5" />
+                          )}
                         </button>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <a href="#" className="text-sm text-medical-600 hover:text-medical-800">
+                      <a
+                        href="#"
+                        className="text-sm text-medical-600 hover:text-medical-800"
+                      >
                         Forgot password?
                       </a>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-medical-600 hover:bg-medical-700 text-white btn-large"
                     >
                       Sign In Securely
@@ -159,14 +196,19 @@ export default function Auth() {
 
                 {/* Signup Tab */}
                 <TabsContent value="signup">
-                  <CardTitle className="text-xl text-medical-900 mb-2">Create Account</CardTitle>
+                  <CardTitle className="text-xl text-medical-900 mb-2">
+                    Create Account
+                  </CardTitle>
                   <CardDescription className="text-medical-700 mb-6 text-accessible">
                     Join the MediSafe community today
                   </CardDescription>
 
                   <form onSubmit={handleSignup} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="signup-email" className="text-medical-900 font-medium">
+                      <Label
+                        htmlFor="signup-email"
+                        className="text-medical-900 font-medium"
+                      >
                         Email Address
                       </Label>
                       <div className="relative">
@@ -176,7 +218,12 @@ export default function Auth() {
                           type="email"
                           placeholder="your.email@example.com"
                           value={signupForm.email}
-                          onChange={(e) => setSignupForm({...signupForm, email: e.target.value})}
+                          onChange={(e) =>
+                            setSignupForm({
+                              ...signupForm,
+                              email: e.target.value,
+                            })
+                          }
                           className="pl-10 border-medical-300 focus:border-medical-500 focus:ring-medical-500 text-accessible"
                           required
                         />
@@ -190,10 +237,12 @@ export default function Auth() {
                       <div className="grid grid-cols-3 gap-2">
                         <button
                           type="button"
-                          onClick={() => setSignupForm({...signupForm, role: "patient"})}
+                          onClick={() =>
+                            setSignupForm({ ...signupForm, role: "patient" })
+                          }
                           className={`p-3 rounded-lg border text-center transition-colors ${
-                            signupForm.role === "patient" 
-                              ? "border-medical-500 bg-medical-50 text-medical-900" 
+                            signupForm.role === "patient"
+                              ? "border-medical-500 bg-medical-50 text-medical-900"
                               : "border-medical-300 hover:border-medical-400"
                           }`}
                         >
@@ -202,10 +251,12 @@ export default function Auth() {
                         </button>
                         <button
                           type="button"
-                          onClick={() => setSignupForm({...signupForm, role: "chemist"})}
+                          onClick={() =>
+                            setSignupForm({ ...signupForm, role: "chemist" })
+                          }
                           className={`p-3 rounded-lg border text-center transition-colors ${
-                            signupForm.role === "chemist" 
-                              ? "border-medical-500 bg-medical-50 text-medical-900" 
+                            signupForm.role === "chemist"
+                              ? "border-medical-500 bg-medical-50 text-medical-900"
                               : "border-medical-300 hover:border-medical-400"
                           }`}
                         >
@@ -214,10 +265,12 @@ export default function Auth() {
                         </button>
                         <button
                           type="button"
-                          onClick={() => setSignupForm({...signupForm, role: "doctor"})}
+                          onClick={() =>
+                            setSignupForm({ ...signupForm, role: "doctor" })
+                          }
                           className={`p-3 rounded-lg border text-center transition-colors ${
-                            signupForm.role === "doctor" 
-                              ? "border-medical-500 bg-medical-50 text-medical-900" 
+                            signupForm.role === "doctor"
+                              ? "border-medical-500 bg-medical-50 text-medical-900"
                               : "border-medical-300 hover:border-medical-400"
                           }`}
                         >
@@ -228,7 +281,10 @@ export default function Auth() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="signup-password" className="text-medical-900 font-medium">
+                      <Label
+                        htmlFor="signup-password"
+                        className="text-medical-900 font-medium"
+                      >
                         Password
                       </Label>
                       <div className="relative">
@@ -238,7 +294,12 @@ export default function Auth() {
                           type={showPassword ? "text" : "password"}
                           placeholder="Create a strong password"
                           value={signupForm.password}
-                          onChange={(e) => setSignupForm({...signupForm, password: e.target.value})}
+                          onChange={(e) =>
+                            setSignupForm({
+                              ...signupForm,
+                              password: e.target.value,
+                            })
+                          }
                           className="pl-10 pr-10 border-medical-300 focus:border-medical-500 focus:ring-medical-500 text-accessible"
                           required
                         />
@@ -247,13 +308,20 @@ export default function Auth() {
                           onClick={() => setShowPassword(!showPassword)}
                           className="absolute right-3 top-3 text-medical-400 hover:text-medical-600"
                         >
-                          {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                          {showPassword ? (
+                            <EyeOff className="h-5 w-5" />
+                          ) : (
+                            <Eye className="h-5 w-5" />
+                          )}
                         </button>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="signup-confirm-password" className="text-medical-900 font-medium">
+                      <Label
+                        htmlFor="signup-confirm-password"
+                        className="text-medical-900 font-medium"
+                      >
                         Confirm Password
                       </Label>
                       <div className="relative">
@@ -263,22 +331,33 @@ export default function Auth() {
                           type={showConfirmPassword ? "text" : "password"}
                           placeholder="Confirm your password"
                           value={signupForm.confirmPassword}
-                          onChange={(e) => setSignupForm({...signupForm, confirmPassword: e.target.value})}
+                          onChange={(e) =>
+                            setSignupForm({
+                              ...signupForm,
+                              confirmPassword: e.target.value,
+                            })
+                          }
                           className="pl-10 pr-10 border-medical-300 focus:border-medical-500 focus:ring-medical-500 text-accessible"
                           required
                         />
                         <button
                           type="button"
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          onClick={() =>
+                            setShowConfirmPassword(!showConfirmPassword)
+                          }
                           className="absolute right-3 top-3 text-medical-400 hover:text-medical-600"
                         >
-                          {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                          {showConfirmPassword ? (
+                            <EyeOff className="h-5 w-5" />
+                          ) : (
+                            <Eye className="h-5 w-5" />
+                          )}
                         </button>
                       </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-medical-600 hover:bg-medical-700 text-white btn-large"
                     >
                       Create Account
@@ -309,11 +388,17 @@ export default function Auth() {
 
           <p className="text-center text-sm text-medical-600 mt-6">
             By creating an account, you agree to our{" "}
-            <a href="#" className="text-medical-700 hover:text-medical-900 underline">
+            <a
+              href="#"
+              className="text-medical-700 hover:text-medical-900 underline"
+            >
               Terms of Service
             </a>{" "}
             and{" "}
-            <a href="#" className="text-medical-700 hover:text-medical-900 underline">
+            <a
+              href="#"
+              className="text-medical-700 hover:text-medical-900 underline"
+            >
               Privacy Policy
             </a>
           </p>
